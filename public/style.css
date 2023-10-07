@@ -1,0 +1,89 @@
+/* Reset de estilos padrão */
+html, body, h1, h2, h3, p, ul, li, form {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilos globais */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(245, 252, 32, 0.953);
+    color: #333;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Estilos do cabeçalho */
+  header {
+    background-color: #f6fd21e3;
+    color: #0a0909;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  nav {
+    margin-top: 10px;
+  }
+  
+  nav a {
+    color: #010101;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  /* Estilos do formulário */
+  main {
+    padding: 20px 0;
+  }
+  
+  section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  form input[type="text"],
+  form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form input[type="file"] {
+    margin-top: 10px;
+  }
+  
+  form input[type="submit"] {
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Estilos do rodapé */
+  footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f7ea31e1;
+    color: #fff;
+  }
+  
