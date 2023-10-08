@@ -1,6 +1,7 @@
 const express = require("express");
 const db = require("./db");
 const upload = require("./multerConfig");
+const routes = require("./routes");
 
 const app = express();
 const port = 3000;
