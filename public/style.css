@@ -1,89 +1,140 @@
-/* Reset de estilos padrão */
-html, body, h1, h2, h3, p, ul, li, form {
-    margin: 0;
-    padding: 0;
+/* Estilos gerais */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #4eb5efd6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilos do cabeçalho */
+.header {
+  background: linear-gradient(135deg, #ff0000, #efdc4e); /* Altere #ff0000 para a cor desejada */
+  color: #070707;
+  text-align: center;
+  padding: 18px 0;
+  animation: backgroundAnimation 10s ease infinite alternate;
+}
+
+
+.header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.nav {
+  margin-top: 10px;
+}
+
+.tab-button {
+  background-color:rgb(86, 86, 246);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 5px;
+}
+
+.tab-button:hover {
+  background-color:#0074d9;
+}
+
+.tab-button i {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+/* Estilos dos formulários */
+.tab-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.tab-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="password"],
+form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form input[type="file"] {
+  margin-top: 10px;
+}
+
+form input[type="submit"] {
+  background-color: #0074d9;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Animação de fundo */
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(135deg, #0074d9, #00a9e1);
   }
-  
-  /* Estilos globais */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: rgba(245, 252, 32, 0.953);
-    color: #333;
+  100% {
+    background: linear-gradient(135deg, #00a9e1, #0074d9);
   }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+}
+
+/* Animação das letras do cabeçalho "Início" */
+.animate-text {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
   }
-  
-  /* Estilos do cabeçalho */
-  header {
-    background-color: #f6fd21e3;
-    color: #0a0909;
-    padding: 10px 0;
-    text-align: center;
+  40% {
+    transform: translateY(-10px);
   }
-  
-  header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+  60% {
+    transform: translateY(-5px);
   }
-  
-  nav {
-    margin-top: 10px;
-  }
-  
-  nav a {
-    color: #010101;
-    text-decoration: none;
-    margin: 0 10px;
-  }
-  
-  /* Estilos do formulário */
-  main {
-    padding: 20px 0;
-  }
-  
-  section {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  form input[type="text"],
-  form input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  form input[type="file"] {
-    margin-top: 10px;
-  }
-  
-  form input[type="submit"] {
-    background-color: #0074d9;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* Estilos do rodapé */
-  footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #f7ea31e1;
-    color: #fff;
-  }
-  
+}
+
+/* Estilos das imagens de produtos */
+.product-images {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.product-images img {
+  width: 30%;
+  max-height: 150px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}

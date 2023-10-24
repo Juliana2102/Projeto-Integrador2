@@ -1,9 +1,9 @@
 const mysql = require('mysql2');
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'seu_usuario',
-  password: 'YES',
+  host: 'localhost:3306',
+  user: 'root',
+  password: '302627',
   database: 'vitrine_vizinha_db', // Nome do banco de dados
 });
 
