@@ -1,10 +1,11 @@
 {
   "name": "pi2",
   "version": "1.0.0",
-  "description": "",
+  "description": "Repositório para o controle de versões do Projeto Integrador em computação 2 do curso de Bacharelado em Tecnologia da Informação (UNIVESP)",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",

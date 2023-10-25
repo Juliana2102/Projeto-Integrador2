@@ -1,13 +1,14 @@
+@charset "UTF-8";
 /* Reset de estilos padrão */
 html, body, h1, h2, h3, p, ul, li, form {
-    margin: 0;
-    padding: 0;
+    margin: 2;
+    padding: 2;
   }
   
   /* Estilos globais */
   body {
-    font-family: Arial, sans-serif;
-    background-color: rgba(245, 252, 32, 0.953);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    background-color: rgba(224, 228, 228, 0.953);
     color: #333;
   }
   
@@ -19,25 +20,33 @@ html, body, h1, h2, h3, p, ul, li, form {
   
   /* Estilos do cabeçalho */
   header {
-    background-color: #f6fd21e3;
+    background-color: #866ce4e3;
     color: #0a0909;
     padding: 10px 0;
     text-align: center;
   }
   
   header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 65px;
+    margin-bottom: 20px;
   }
   
   nav {
-    margin-top: 10px;
+    margin-top: 40px;
+    font-size: 60px;
+    background-color: rgb(180, 228, 229);
   }
   
   nav a {
-    color: #010101;
-    text-decoration: none;
+    color: rgba(34, 34, 34);
+    text-decoration:none ;
     margin: 0 10px;
+    
+  }
+
+  li{
+    color: #9666cb;
+    font-size: 50px;
   }
   
   /* Estilos do formulário */
@@ -46,10 +55,10 @@ html, body, h1, h2, h3, p, ul, li, form {
   }
   
   section {
-    background-color: #fff;
+    background-color: #9666cb;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 7 7px rgba(0, 0, 0, 0.315);
   }
   
   h2 {
