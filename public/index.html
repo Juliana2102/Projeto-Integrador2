@@ -18,8 +18,8 @@
   </header>
 
   <div id="inicio" class="tab-content">
-    <h2>Bem-vindos ao seu site de promoções do bairro</h2>
-    <p>Aqui você encontrará as melhores promoções e ofertas dos estabelecimentos locais do bairro. Não perca nenhuma oportunidade!</p>
+    <h2 style="font-size: x-large;">Bem-vindos ao seu site de promoções do bairro</h2>
+    <p style="font-size: x-large;">Aqui você encontrará as melhores promoções e ofertas dos estabelecimentos locais do bairro. Não perca nenhuma oportunidade!</p>
   </div>
 
   <div id="login" class="tab-content">
@@ -36,13 +36,22 @@
   <div id="cadastro" class="tab-content">
     <h2>Cadastro</h2>
     <form action="/cadastro" method="post">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="produtoNome" required>
+      <label for="nome">nome:</label>
+      <input type="text" id="nome" name="nome" required>
       <label for="senhaCadastro">Senha:</label>
-      <input type="password" id="senhaCadastro" name="produtoSenhaCadastro" required>
+      <input type="password" id="senhaCadastro" name="senhaCadastro" required>
       <label for="email">Email:</label>
-      <input type="email" id="email" name="produtoEmail" required>
+      <input type="email" id="email" name="email" required>
       <input type="submit" value="Cadastrar">
+     
+  
+
+  <script>
+    function redirectToLogin() {
+      // Redirecionar para a página de login após o cadastro
+      window.location.href = "/login";
+    }
+  </script>
     </form>
   </div>
 
@@ -58,27 +67,24 @@
       <label for="produtoImagem">Imagem:</label>
       <input type="file" id="produtoImagem" name="produtoImagem" required>
       <input type="submit" value="Cadastrar">
+
+      <div class="product-images">
+        <img id="imagemProduto" src="./assets/img/" alt="Imagem do produto">
+      </div>
     </form>
 
-    <div class="product-images">
-      <img src="produto1.jpg" alt="Produto 1">
-      <img src="produto2.jpg" alt="Produto 2">
-      <img src="produto3.jpg" alt="Produto 3">
-    </div>
-  </div>
-
-  <script>
-    function openTab(tabName) {
-      const tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => {
-        tab.style.display = 'none';
-      });
-
-      const tabToShow = document.getElementById(tabName);
-      if (tabToShow) {
-        tabToShow.style.display = 'block';
+    <script>
+      function openTab(tabName) {
+        const tabs = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => {
+          tab.style.display = 'none';
+        });
+  
+        const tabToShow = document.getElementById(tabName);
+        if (tabToShow) {
+          tabToShow.style.display = 'block';
+        }
       }
-    }
-  </script>
-</body>
-</html>
+    </script>
+  </body>
+  </html>
