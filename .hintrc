@@ -10,6 +10,14 @@
       }
     ],
     "meta-viewport": "off",
-    "meta-charset-utf-8": "off"
+    "meta-charset-utf-8": "off",
+    "button-type": "off",
+    "no-inline-styles": "off",
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id": "off"
+      }
+    ]
   }
 }

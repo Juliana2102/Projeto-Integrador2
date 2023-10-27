@@ -1,8 +1,12 @@
 /* Estilos gerais */
 body {
   font-family: Arial, sans-serif;
+  background-image: url(https://th.bing.com/th/id/R.130b7d1e4e572631038b3c3f36fc43cc?rik=GxcMvbvKGLBUAQ&pid=ImgRaw&r=0);
+  background-position: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: #4eb5efd6;
-  color: #333;
+  color:black;
   margin: 0;
   padding: 0;
 }
@@ -27,6 +31,40 @@ body {
   font-size: 36px;
   margin-bottom: 10px;
 }
+#inicio {
+  text-align: center;
+  background-color: #33cfee;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px black;
+}
+
+#inicio h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  color:black;
+}
+
+#inicio p {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  color: black;
+}
+
+/* Animação simples */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#inicio {
+  animation: fadeIn 1s ease-in;
+}
+
 
 .nav {
   margin-top: 10px;
@@ -54,7 +92,7 @@ body {
 
 /* Estilos dos formulários */
 .tab-content {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -79,7 +117,7 @@ form input[type="email"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #61c7f3;
   border-radius: 5px;
 }
 
@@ -89,7 +127,7 @@ form input[type="file"] {
 
 form input[type="submit"] {
   background-color: #0074d9;
-  color: #fff;
+  color: #5ee9e7;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
