@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Vitrine Vizinha</title>
+  <link href="/dist/output.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -36,7 +37,7 @@
   <div id="cadastro" class="tab-content">
     <h2>Cadastro</h2>
     <form action="/cadastro" method="post">
-      <label for="nome">Nome:</label>
+      <label for="nome">Nome</label>
       <input type="text" id="nome" name="nome" required>
       <label for="senhaCadastro">Senha:</label>
       <input type="password" id="senhaCadastro" name="senhaCadastro" required>
@@ -49,7 +50,7 @@
   <div id="cadastroProdutos" class="tab-content">
     <h2>Anuncie seus produtos e serviços</h2>
     <form action="/cadastro" method="post" enctype="multipart/form-data">
-      <label for="produtoNome">Nome do produto ou serviço:</label>
+      <label for="produtoNome">Nome</label>
       <input type="text" id="produtoNome" name="produtoNome" required>
       <label for="produtoDescricao">Descrição:</label>
       <input type="text" id="produtoDescricao" name="produtoDescricao" required>

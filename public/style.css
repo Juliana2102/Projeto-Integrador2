@@ -1,11 +1,11 @@
 /* Estilos gerais */
+
 body {
-  font-family: Arial, sans-serif;
-  background-image: url(https://th.bing.com/th/id/R.130b7d1e4e572631038b3c3f36fc43cc?rik=GxcMvbvKGLBUAQ&pid=ImgRaw&r=0);
-  background-position: auto;
+  font-family: sans-serif;
+  background-image: url(https://www.bing.com/images/blob?bcid=smqAO8yaeUMGNQ);
+  background-position:bottom;
   background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #4eb5efd6;
+  background-repeat: repeat;
   color:black;
   margin: 0;
   padding: 0;
@@ -23,17 +23,17 @@ body {
   color: #070707;
   text-align: center;
   padding: 18px 0;
-  animation: backgroundAnimation 10s ease infinite alternate;
+  animation: animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75;
 }
 
 
 .header h1 {
-  font-size: 36px;
+  font-size: 75px;
   margin-bottom: 10px;
 }
 #inicio {
   text-align: center;
-  background-color: #33cfee;
+  background-color: #f57f17bd;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px black;
@@ -92,7 +92,7 @@ body {
 
 /* Estilos dos formulários */
 .tab-content {
-  background-color: #ffffff;
+  background-color: #F9A825;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -114,11 +114,12 @@ form input[type="text"],
 form input[type="number"],
 form input[type="password"],
 form input[type="email"] {
-  width: 100%;
+  width: 50%;
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #61c7f3;
   border-radius: 5px;
+  display: flex;
 }
 
 form input[type="file"] {
