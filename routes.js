@@ -3,7 +3,6 @@ const db = require("./db");
 const upload = require("./multerConfig");
 
 const app = express();
-const port = 3000;
 
 app.use(express.static("public"));
 

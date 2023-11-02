@@ -2,8 +2,9 @@
 
 body {
   font-family: sans-serif;
-  background-image: url(https://www.bing.com/images/blob?bcid=smqAO8yaeUMGNQ);
-  background-position:bottom;
+  background-color: gold;
+  /* background-image: url(https://economiacircolare.confindustria.it/wp-content/uploads/2018/09/Public-consultation-1000x500.jpg); */
+  background-position: center;
   background-size: cover;
   background-repeat: repeat;
   color:black;
@@ -19,7 +20,6 @@ body {
 
 /* Estilos do cabeçalho */
 .header {
-  background: linear-gradient(135deg, #ff0000, #efdc4e); /* Altere #ff0000 para a cor desejada */
   color: #070707;
   text-align: center;
   padding: 18px 0;
@@ -28,26 +28,31 @@ body {
 
 
 .header h1 {
-  font-size: 75px;
-  margin-bottom: 10px;
+  font-family: cursive;
+  font-size: 80px;
+  margin-bottom: 14px;
 }
 #inicio {
+  /* font-family: cursive; */
   text-align: center;
-  background-color: #f57f17bd;
+  font-size: x-large;
+  background-color: #ebe7e400;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 6px black;
 }
 
 #inicio h2 {
+  font-family: fantasy;
+  /* background-color: orange; */
   font-family: 'Arial', sans-serif;
-  font-size: 24px;
+  font-size: xx-large;
   color:black;
 }
 
 #inicio p {
+  /* background-color: orange; */
   font-family: 'Arial', sans-serif;
-  font-size: 16px;
+  font-size: 28px;
   color: black;
 }
 
@@ -92,7 +97,7 @@ body {
 
 /* Estilos dos formulários */
 .tab-content {
-  background-color: #F9A825;
+  background-color:#ebe7e400;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -117,7 +122,7 @@ form input[type="email"] {
   width: 50%;
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #61c7f3;
+  border: 1px solid  black;
   border-radius: 5px;
   display: flex;
 }
@@ -165,8 +170,12 @@ form input[type="submit"] {
 /* Estilos das imagens de produtos */
 .product-images {
   display: flex;
-  justify-content: space-between;
   margin-top: 20px;
+  align-items:flex-end;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-end;
 }
 
 .product-images img {
@@ -176,4 +185,5 @@ form input[type="submit"] {
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-right: 10px;
+  position: inherit;
 }
