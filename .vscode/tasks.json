@@ -1,33 +1,12 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "npm",
-			"script": "install",
-			"group": "clean",
-			"problemMatcher": [],
-			"label": "npm: install",
-			"detail": "install dependencies from package"
-		},
-		{
-			"type": "java (build)",
-			"paths": [
-				"${workspace}"
-			],
-			"isFullBuild": true,
-			"group": "build",
-			"problemMatcher": [],
-			"label": "java (build): Build Workspace",
-			"detail": "$(tools) Build all the Java projects in workspace."
-		},
-		{
-			"type": "npm",
-			"script": "install",
-			"path": ".vscode",
-			"group": "clean",
-			"problemMatcher": [],
-			"label": "npm: install - .vscode",
-			"detail": "install dependencies from package"
-		}
-	]
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "install",
+            "group": "clean",
+            "problemMatcher": [],
+            "label": "npm: install",
+            "detail": "install dependencies from package"
+        }
+    ]
 }

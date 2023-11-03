@@ -17,10 +17,10 @@
     </nav>
   </header>
 
-  <section id="inicio" class="tab-content">
-    <h2 style="font-family: math;">Bem-vindos ao seu site de promoções do bairro</h2>
-    <p style="font-family:math ;">Aqui você encontrará as melhores promoções e ofertas dos estabelecimentos locais do bairro. Não perca nenhuma oportunidade!</p>
-</section>
+  <div id="inicio" class="tab-content">
+    <h2 style="font-size: x-large;">Bem-vindos ao seu site de promoções do bairro</h2>
+    <p style="font-size: x-large;">Aqui você encontrará as melhores promoções e ofertas dos estabelecimentos locais do bairro. Não perca nenhuma oportunidade!</p>
+  </div>
 
   <div id="login" class="tab-content">
     <h2>Login</h2>
@@ -36,20 +36,29 @@
   <div id="cadastro" class="tab-content">
     <h2>Cadastro</h2>
     <form action="/cadastro" method="post">
-      <label for="nome">Nome</label>
+      <label for="nome">nome:</label>
       <input type="text" id="nome" name="nome" required>
       <label for="senhaCadastro">Senha:</label>
       <input type="password" id="senhaCadastro" name="senhaCadastro" required>
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
       <input type="submit" value="Cadastrar">
+     
+  
+
+  <script>
+    function redirectToLogin() {
+      // Redirecionar para a página de login após o cadastro
+      window.location.href = "/login";
+    }
+  </script>
     </form>
   </div>
 
   <div id="cadastroProdutos" class="tab-content">
     <h2>Anuncie seus produtos e serviços</h2>
     <form action="/cadastro" method="post" enctype="multipart/form-data">
-      <label for="produtoNome">Nome</label>
+      <label for="produtoNome">Nome do produto ou serviço:</label>
       <input type="text" id="produtoNome" name="produtoNome" required>
       <label for="produtoDescricao">Descrição:</label>
       <input type="text" id="produtoDescricao" name="produtoDescricao" required>
@@ -58,24 +67,24 @@
       <label for="produtoImagem">Imagem:</label>
       <input type="file" id="produtoImagem" name="produtoImagem" required>
       <input type="submit" value="Cadastrar">
+
       <div class="product-images">
-        <img id="imagemProduto" src="assets/img/boneca.jpeg.jpeg" alt="Imagem do produto">
+        <img id="imagemProduto" src="" alt="Imagem do produto">
       </div>
     </form>
-  </div>
 
-  <script>
-    function openTab(tabName) {
-      const tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(tab => {
-        tab.style.display = 'none';
-      });
-
-      const tabToShow = document.getElementById(tabName);
-      if (tabToShow) {
-        tabToShow.style.display = 'block';
+    <script>
+      function openTab(tabName) {
+        const tabs = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => {
+          tab.style.display = 'none';
+        });
+  
+        const tabToShow = document.getElementById(tabName);
+        if (tabToShow) {
+          tabToShow.style.display = 'block';
+        }
       }
-    }
-  </script>
-</body>
-</html>
+    </script>
+  </body>
+  </html>
