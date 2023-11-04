@@ -34,25 +34,11 @@ app.post("/cadastroProdutos", upload.single("produtoImagem"), (req, res) => {
         console.error("Erro ao inserir dados no banco de dados:", err);
         res.status(500).send("Erro ao processar o formulário.");
       } else {
-        res.redirect("/produtos");
+        res.send("Cadastro realizado com sucesso!");
       }
     }
   );
 });
-
-// Rota para obter os produtos do banco de dados
-app.get('/obterProdutos', (req, res) => {
-  db.query("SELECT * FROM produtos", (err, results) => {
-    if (err) {
-      console.error("Erro ao buscar produtos:", err);
-      res.status(500).json({ error: 'Erro ao buscar produtos' });
-    } else {
-      res.json(results);
-    }
-  });
-});
-
-
 
 app.use(express.static("public"));
 
