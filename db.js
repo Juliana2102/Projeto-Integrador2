@@ -4,7 +4,7 @@ const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '302627',
-  database: 'vitrine_vizinha_db', // Nome do banco de dados
+  database: 'vitrine_vizinha_db',
 });
 
 db.connect((err) => {
