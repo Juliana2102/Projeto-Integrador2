@@ -6,10 +6,49 @@
   <title>Vitrine Vizinha</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Obter Localização com Google Maps</title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_DE_API"></script>
+  <script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -25.363, lng: 131.044},
+        zoom: 4
+      });
+
+      var infoWindow = new google.maps.InfoWindow();
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Sua localização atual.');
+          infoWindow.open(map);
+          map.setCenter(pos);
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+    }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+      infoWindow.setPosition(pos);
+      infoWindow.setContent(browserHasGeolocation ? 'Erro: O serviço de geolocalização falhou.' : 'Erro: Seu navegador não suporta geolocalização.');
+      infoWindow.open(map);
+    }
+  </script>
 </head>
+
+
 <body>
   <header class="header">
-    <h1 class="animate-text">Vitrine Vizinha</h1>
+    <h1>Vitrine Vizinha</h1>
     <nav class="nav">
       <button class="tab-button" onclick="openTab('inicio')"><i class="fa fa-home"></i> Início</button>
       <button class="tab-button" onclick="openTab('cadastro')"><i class="fa fa-user-plus"></i> Cadastro</button>
@@ -19,8 +58,9 @@
   </header>
 
   <div id="inicio" class="tab-content">
-    <h2 style="font-size: x-large;">Bem-vindos ao seu site de promoções do bairro</h2>
-    <p style="font-size: x-large;">Aqui você encontrará as melhores promoções e ofertas dos estabelecimentos locais do bairro. Não perca nenhuma oportunidade!</p>
+    <p>Bem-vindos ao seu site de promoções do bairro
+    Aqui você encontrará as melhores promoções e ofertas dos estabelecimentos locais do bairro. Não perca nenhuma oportunidade!
+    </p>
   </div>
 
   <div id="cadastro" class="tab-content">
@@ -62,10 +102,6 @@
       <label for="produtoImagem">Imagem:</label>
       <input type="file" id="produtoImagem" name="produtoImagem" required>
       <input type="submit" value="Cadastrar">
-
-      <div class="product-images">
-        <img id="imagemProduto" src="" alt="Imagem do produto">
-      </div>
     </form>
 
     <script>
@@ -81,5 +117,13 @@
         }
       }
     </script>
+
+<h1>Google Maps para Geolocalização</h1>
+<div id="map" style="height: 400px;"></div>
+<script>initMap()</script>
+<script async
+    src="https://maps.googleapis.com/maps/api/js?214&callback=initMap">
+</script>
+
   </body>
   </html>

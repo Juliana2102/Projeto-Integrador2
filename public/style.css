@@ -1,13 +1,12 @@
 /* Estilos gerais */
 body {
+  /* background-image:url(https://th.bing.com/th/id/OIG.4Su74aqPBpV0SYX1Mdxw?pid=ImgGn); */
   font-family: sans-serif;
-  background-color: gold;
   background-position: center;
   background-size: cover;
-  background-repeat: repeat;
+  background-repeat:no-repeat;
   color: black;
-  margin: revert;
-  padding: 0;
+  background-color: #FF8F00;
 }
 
 .container {
@@ -21,7 +20,7 @@ body {
   text-shadow: 3px 1px 0px #C0C0C0, 2px 2px 0px #C0C0C0;
   color: #141313;
   text-align: center;
-  padding: 18px 0;
+  padding: -18px 19px;
   animation: animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75;
 }
 .header p{
@@ -33,9 +32,16 @@ body {
 }
 
 .header h1 {
-  font-family:Arial, Helvetica, sans-serif ;
-  font-size: 40px;
-  margin-bottom: 6px;
+  background-color: #FF8F00;
+  font-family:Arial, Helvetica, sans-serif;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  text-indent: 320px;
+  height: 31px;
+  width: -webkit-fill-available;
+  display: flex;
+  position: static;
+  font-size: xx-large;
 }
 
 h1 {
@@ -47,16 +53,17 @@ h1 {
 }
 
 #inicio p {
+  text-shadow: 4px 4px 2px #C0C00A, 5px 2px 23px #C0C089;
   font-family: 'Arial', sans-serif;
-  font-size: 38px;
+  font-size: 37px;
   color: black;
   padding: auto;
   background-repeat: initial;
-  background-color: orange;
   animation: alternate;
+  text-decoration-color: burlywood;
 }
 
-/* Animação simples */
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
