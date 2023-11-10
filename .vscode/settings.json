@@ -13,5 +13,8 @@
             "database": "vitrine_vizinha_db",
             "username": "root"
         }
-    ]
+    ],
+    "files.associations": {
+        "plyconfig.json": "jsonc"
+    }
 }
