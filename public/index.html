@@ -6,49 +6,14 @@
   <title>Vitrine Vizinha</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <title>Obter Localização com Google Maps</title>
-  <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_DE_API"></script>
-  <script>
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -25.363, lng: 131.044},
-        zoom: 4
-      });
-
-      var infoWindow = new google.maps.InfoWindow();
-
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-
-          infoWindow.setPosition(pos);
-          infoWindow.setContent('Sua localização atual.');
-          infoWindow.open(map);
-          map.setCenter(pos);
-        }, function() {
-          handleLocationError(true, infoWindow, map.getCenter());
-        });
-      } else {
-        handleLocationError(false, infoWindow, map.getCenter());
-      }
-    }
-
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-      infoWindow.setPosition(pos);
-      infoWindow.setContent(browserHasGeolocation ? 'Erro: O serviço de geolocalização falhou.' : 'Erro: Seu navegador não suporta geolocalização.');
-      infoWindow.open(map);
-    }
-  </script>
 </head>
 
 
 <body>
   <header class="header">
-    <h1>Vitrine Vizinha</h1>
+    <div class="logo">
+      <img src="assets/Captura da Web_8-11-2023_12528_turbologo.com.jpeg" alt="Seu Logo">
+    </div>
     <nav class="nav">
       <button class="tab-button" onclick="openTab('inicio')"><i class="fa fa-home"></i> Início</button>
       <button class="tab-button" onclick="openTab('cadastro')"><i class="fa fa-user-plus"></i> Cadastro</button>
@@ -117,6 +82,44 @@
         }
       }
     </script>
+
+    
+  <title>Obter Localização com Google Maps</title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_DE_API"></script>
+  <script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -25.363, lng: 131.044},
+        zoom: 4
+      });
+
+      var infoWindow = new google.maps.InfoWindow();
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          infoWindow.setPosition(pos);
+          infoWindow.setContent('Sua localização atual.');
+          infoWindow.open(map);
+          map.setCenter(pos);
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+    }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+      infoWindow.setPosition(pos);
+      infoWindow.setContent(browserHasGeolocation ? 'Erro: O serviço de geolocalização falhou.' : 'Erro: Seu navegador não suporta geolocalização.');
+      infoWindow.open(map);
+    }
+  </script>
 
 <h1>Google Maps para Geolocalização</h1>
 <div id="map" style="height: 400px;"></div>
