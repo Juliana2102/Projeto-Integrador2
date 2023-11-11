@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viwport" content="width=device-width, initial">
+  <meta name="viewport" content="width=device-width, initial">
   <title>Vitrine Vizinha</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,6 +19,8 @@
       <button class="tab-button" onclick="openTab('cadastro')"><i class="fa fa-user-plus"></i> Cadastro</button>
       <button class="tab-button" onclick="openTab('login')"><i class="fa fa-sign-in"></i> Login</button>
       <button class="tab-button" onclick="openTab('cadastroProdutos')"><i class="fa fa-shopping-cart"></i> Cadastrar Produto</button>
+      <button class="tab-button" onclick="openTab('ofertas')"><i class="fa fa-bullhorn"></i> Ver Ofertas</button>
+
     </nav>
   </header>
 
@@ -67,8 +69,78 @@
       <label for="produtoImagem">Imagem:</label>
       <input type="file" id="produtoImagem" name="produtoImagem" required>
       <input type="submit" value="Cadastrar">
+    <div id="map" style="height: 150px; width: 100%;"></div>
+    <button onclick="getLocation()">Obter Localização</button>
+  </div>
     </form>
+  </div>
 
+  <div>
+    <div class="ofertas"></div>
+    <h3>Ofertas Disponíveis</h3>
+    <div id="ofertas" class="tab-content">
+      <div class="product1">
+        <img src="assets/img/blocos-de-montar.jpeg.jpeg" alt="Produto 1">
+        <h3>Bloco de blocos-de-montar</h3>
+        <p>Brinquedo educativo</p>
+        <p>Preço: $12</p>
+      </div>
+    
+      <div class="product2">
+        <img src="assets/img/boneca.jpeg.jpeg" alt="Produto 2">
+        <h3>Boneca</h3>
+        <p>Boneca tipo barbie</p>
+        <p>Preço: R$29</p>
+      </div>
+
+      <div class="product3">
+        <img src="assets/img/cubo-magico.jpeg" alt="Produto 3">
+        <h3>Cubo mágico</h3>
+        <p>Briquedo tridimensional desafiador</p>
+        <p>Preço: $15</p>
+      </div>
+  
+      <div class="product4">
+        <img src="assets/img/bolo brigadeiro com morango.jpg" alt="Produto 4">
+        <h3>Bolo confeitado de brigadeiro com morango 1kg </h3>
+        <p>Preço: $70</p>
+        </div>
+      
+      <div class="product5">
+        <img src="assets/img/bolo confeti.jpg" alt="Produto 5">
+        <h3>Bolo festa confetti 1kg</h3>
+        <p>Preço: $70</p>
+      </div>
+
+      <div class="product6">
+        <img src="assets/img/brigadeiros recheados.jpg" alt="Produto 6">
+        <h3>brigadeiros recheados 100 un.</h3>
+        <p>Preço: $50</p>
+      </div>
+
+      <div class="product7">
+        <img src="assets/img/achocolatado.jpeg" alt="Produto 7">
+        <h3>achocolatado em pó</h3>
+        <p>Preço: $10</p>
+      </div>
+
+      <div class="product8" style="display: inline-block; ">
+        <img src="assets/img/café pilão.webp" alt="Produto 8">
+        <h3>Café pilão</h3>
+        <p>Preço: $15</p>
+      </div>
+
+      <div class="product9">
+        <img src="assets/img/sabão em pó.webp" alt="Produto 9">
+        <h3>sabão em pó</h3>
+        <p>Preço: $20</p>
+      </div>
+    
+    
+
+    </div>
+    
+  </div>
     <script>
       function openTab(tabName) {
         const tabs = document.querySelectorAll('.tab-content');
@@ -79,18 +151,27 @@
         const tabToShow = document.getElementById(tabName);
         if (tabToShow) {
           tabToShow.style.display = 'block';
+          if (tabName === 'cadastro'){
+            initMap();
         }
       }
+    }
+    
     </script>
+
+
+<script async
+    src="https://maps.googleapis.com/maps/api/js?214&callback=initMap">
+</script>
 
     
   <title>Obter Localização com Google Maps</title>
-  <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_DE_API"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=214"></script>
   <script>
     function initMap() {
       var map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: -25.363, lng: 131.044},
-        zoom: 4
+        zoom: 0
       });
 
       var infoWindow = new google.maps.InfoWindow();
@@ -121,12 +202,9 @@
     }
   </script>
 
-<h1>Google Maps para Geolocalização</h1>
-<div id="map" style="height: 400px;"></div>
+  
+    <div id="map" style="height: 400px;"></div>
 <script>initMap()</script>
-<script async
-    src="https://maps.googleapis.com/maps/api/js?214&callback=initMap">
-</script>
 
   </body>
   </html>

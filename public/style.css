@@ -6,7 +6,6 @@ body {
   background-size: cover;
   background-repeat:no-repeat;
   color: black;
-
 }
 
 .container {
@@ -42,6 +41,7 @@ body {
   display: flex;
   position: static;
   font-size: xx-large;
+
 }
 
 h1 {
@@ -63,6 +63,74 @@ h1 {
   text-decoration-color: burlywood;
 }
 
+
+#ofertas {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.product1,
+.product2,
+.product3,
+.product4,
+.product5,
+.product6,
+.product7,
+.product8,
+.product9 {
+  width: calc(24.33% - -62px); /* 10px de espaço entre os cards */
+  margin-bottom: 28px;  /* Espaçamento inferior entre os cards */
+  box-sizing: border-box;
+  /* size: 107px; */
+}
+
+.product1 img,
+.product2 img,
+.product3 img,
+.product4 img,
+.product5 img,
+.product6 img,
+.product7 img,
+.product8 img,
+.product9 img {
+  width: 119%;
+  height: auto;
+}
+
+/* Estilos comuns para todos os cards */
+.product1,
+.product2,
+.product3,
+.product4,
+.product5,
+.product6,
+.product7,
+.product8,
+.product9 {
+  background-color: #d2e2fd;
+  padding: 111px;
+  border-radius: -9px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .product1,
+  .product2,
+  .product3,
+  .product4,
+  .product5,
+  .product6,
+  .product7,
+  .product8,
+  .product9 {
+    width: calc(50% - 10px); /* 10px de espaço entre os cards */
+  }
+}
 
 @keyframes fadeIn {
   0% {
@@ -103,16 +171,17 @@ h1 {
 
 /* Estilos dos formulários */
 .tab-content {
-  background-color: #ebe7e400;
-  padding: 20px;
+  background-color: rgba(66,133,244,.16);
+  padding: 111px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: none;
 }
 
 .tab-content h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 14px;
+  margin-bottom: 50px;
+
 }
 
 form label {
@@ -146,27 +215,10 @@ form input[type="submit"] {
   cursor: pointer;
 }
 
-/* Animação das letras do cabeçalho "Início" */
-.animate-text {
-  animation: bounce 3s infinite;
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
 /* Estilos das imagens de produtos */
-.product-images {
+img {
   display: flex;
-  margin-top: 20px;
+  /* margin-top: 3px; */
   align-items: flex-end;
   flex-direction: column;
   flex-wrap: wrap;
@@ -174,12 +226,4 @@ form input[type="submit"] {
   justify-content: flex-end;
 }
 
-.product-images img {
-  width: 30%;
-  max-height: 150px;
-  object-fit: cover;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 10px;
-  position: inherit;
-}
+
