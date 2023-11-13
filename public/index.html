@@ -40,6 +40,8 @@
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required>
       <input type="submit" value="Cadastrar">
+      <div id="map" style="height: 200px;"></div> <!-- Mantenha o mapa aqui -->
+      <button id="map-button" class="tab-button" onclick="openMap()"></button>
     
     </form>
   </div>
@@ -69,17 +71,15 @@
       <label for="produtoImagem">Imagem:</label>
       <input type="file" id="produtoImagem" name="produtoImagem" required>
       <input type="submit" value="Cadastrar">
-    <div id="map" style="height: 150px; width: 100%;"></div>
-    <button onclick="getLocation()">Obter Localização</button>
-  </div>
+    
+
+
     </form>
   </div>
-
-  <div>
-    <div class="ofertas"></div>
-    <h3>Ofertas Disponíveis</h3>
+    
+<div>
     <div id="ofertas" class="tab-content">
-      <div class="product1">
+     <div class="product1">
         <img src="assets/img/blocos-de-montar.jpeg.jpeg" alt="Produto 1">
         <h3>Bloco de blocos-de-montar</h3>
         <p>Brinquedo educativo</p>
@@ -99,13 +99,13 @@
         <p>Briquedo tridimensional desafiador</p>
         <p>Preço: $15</p>
       </div>
-  
+
       <div class="product4">
         <img src="assets/img/bolo brigadeiro com morango.jpg" alt="Produto 4">
         <h3>Bolo confeitado de brigadeiro com morango 1kg </h3>
         <p>Preço: $70</p>
-        </div>
-      
+      </div>
+
       <div class="product5">
         <img src="assets/img/bolo confeti.jpg" alt="Produto 5">
         <h3>Bolo festa confetti 1kg</h3>
@@ -124,7 +124,7 @@
         <p>Preço: $10</p>
       </div>
 
-      <div class="product8" style="display: inline-block; ">
+      <div class="product8">
         <img src="assets/img/café pilão.webp" alt="Produto 8">
         <h3>Café pilão</h3>
         <p>Preço: $15</p>
@@ -135,76 +135,67 @@
         <h3>sabão em pó</h3>
         <p>Preço: $20</p>
       </div>
-    
-    
-
-    </div>
-    
-  </div>
-    <script>
-      function openTab(tabName) {
-        const tabs = document.querySelectorAll('.tab-content');
-        tabs.forEach(tab => {
-          tab.style.display = 'none';
-        });
+   </div>
+</div>
   
-        const tabToShow = document.getElementById(tabName);
-        if (tabToShow) {
-          tabToShow.style.display = 'block';
-          if (tabName === 'cadastro'){
-            initMap();
-        }
+<script>
+  var map; // Declara a variável map no escopo global
+
+  function openTab(tabName) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => {
+      if (tab.id === tabName) {
+        tab.classList.add('active-tab');
+      } else {
+        tab.classList.remove('active-tab');
       }
+    });
+  }
+
+  function openMap() {
+    if (!map) {
+      initMap(); // Chame a função para inicializar o mapa apenas se ainda não estiver inicializado
     }
-    
-    </script>
+    openTab('cadastro'); // Abra a aba 'cadastro' que contém o mapa
+  }
 
+  function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: -25.363, lng: 131.044 },
+      zoom: 0
+    });
 
-<script async
-    src="https://maps.googleapis.com/maps/api/js?214&callback=initMap">
+    var infoWindow = new google.maps.InfoWindow();
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+
+        infoWindow.setPosition(pos);
+        infoWindow.setContent('Sua localização atual.');
+        infoWindow.open(map);
+        map.setCenter(pos);
+      }, function () {
+        handleLocationError(true, infoWindow, map.getCenter());
+      });
+    } else {
+      handleLocationError(false, infoWindow, map.getCenter());
+    }
+  }
+
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ? 'Erro: O serviço de geolocalização falhou.' : 'Erro: Seu navegador não suporta geolocalização.');
+    infoWindow.open(map);
+  }
 </script>
 
-    
-  <title>Obter Localização com Google Maps</title>
-  <script src="https://maps.googleapis.com/maps/api/js?key=214"></script>
-  <script>
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -25.363, lng: 131.044},
-        zoom: 0
-      });
-
-      var infoWindow = new google.maps.InfoWindow();
-
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position) {
-          var pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude
-          };
-
-          infoWindow.setPosition(pos);
-          infoWindow.setContent('Sua localização atual.');
-          infoWindow.open(map);
-          map.setCenter(pos);
-        }, function() {
-          handleLocationError(true, infoWindow, map.getCenter());
-        });
-      } else {
-        handleLocationError(false, infoWindow, map.getCenter());
-      }
-    }
-
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-      infoWindow.setPosition(pos);
-      infoWindow.setContent(browserHasGeolocation ? 'Erro: O serviço de geolocalização falhou.' : 'Erro: Seu navegador não suporta geolocalização.');
-      infoWindow.open(map);
-    }
-  </script>
-
-  
-    <div id="map" style="height: 400px;"></div>
-<script>initMap()</script>
+<script async
+  src="https://maps.googleapis.com/maps/api/js?214&callback=initMap">
+</script>
 
   </body>
   </html>

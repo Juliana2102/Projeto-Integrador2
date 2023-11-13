@@ -11,6 +11,7 @@ app.post("/cadastroUsuario", (req, res) => {
   const nome = req.body.nome;
   const email = req.body.email;
   const senha = req.body.senha;
+  res.redirect("/login");
 
   console.log("Nome:", nome);
   console.log("E-mail:", email);
@@ -25,6 +26,8 @@ app.post("/cadastroProdutos", upload.single("produtoImagem"), (req, res) => {
   const descricao = req.body.produtoDescricao;
   const preco = req.body.produtoPreco;
   const imagem = req.file;
+  res.redirect("/ofertas"); 
+
 
   db.query(
     "INSERT INTO produtos (nome, descricao, preco, imagem) VALUES (?, ?, ?, ?)",
