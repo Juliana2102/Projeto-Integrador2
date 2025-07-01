@@ -4,7 +4,7 @@ const db = require("./db");
 const upload = require("./multerConfig");
 const app = express(); // Instancie o Express para criar um aplicativo
 
-// Middleware para analisar os dados do formulário
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post("/cadastroUsuario", (req, res) => {
@@ -17,7 +17,7 @@ app.post("/cadastroUsuario", (req, res) => {
   console.log("E-mail:", email);
   console.log("Senha:", senha);
 
-  // Envie uma resposta de sucesso
+ 
   res.send("Cadastro de usuário realizado com sucesso!");
 });
 
