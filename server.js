@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const db = require("./db");
 const upload = require("./multerConfig");
-const app = express(); // Instancie o Express para criar um aplicativo
+const app = express(); 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
