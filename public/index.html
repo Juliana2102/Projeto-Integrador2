@@ -139,8 +139,7 @@
 </div>
   
 <script>
-  var map; // Declara a variável map no escopo global
-
+  var map; 
   function openTab(tabName) {
     const tabs = document.querySelectorAll('.tab-content');
     tabs.forEach(tab => {
@@ -154,7 +153,7 @@
 
   function openMap() {
     if (!map) {
-      initMap(); // Chame a função para inicializar o mapa apenas se ainda não estiver inicializado
+      initMap(); 
     }
     openTab('cadastro'); // Abra a aba 'cadastro' que contém o mapa
   }
